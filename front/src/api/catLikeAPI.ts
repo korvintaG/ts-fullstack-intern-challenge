@@ -1,7 +1,7 @@
 import { CatLike, DataCatLike, SuccessResult } from '../types';
 import { Api } from './api'; 
 
-export const API_URL = import.meta.env.VITE_CAT_LIKE_API_URL!;
+export const API_URL = import.meta.env.VITE_CAT_LIKE_API_URL || '/api';
 
 export interface ICatLikeAPI {
   getCatLikes: () => Promise<DataCatLike>;

@@ -1,11 +1,11 @@
 import { Cat } from '../types';
-import { Api } from './api'; 
+import { Api } from './api';
 
-export const API_URL = import.meta.env.VITE_CAT_API_URL!;
+export const API_URL = import.meta.env.VITE_CAT_API_URL || 'https://api.thecatapi.com/v1/images';
 
 export interface ICatAPI {
   getCats: () => Promise<Cat[]>;
-  getCat: (id:string)=> Promise<Cat>;
+  getCat: (id: string) => Promise<Cat>;
 }
 
 export class CatAPI extends Api implements ICatAPI {
@@ -16,13 +16,13 @@ export class CatAPI extends Api implements ICatAPI {
     });
   };
 
-  getCat= (id:string): Promise<Cat> => {
-    return this.request<Cat>(`/`+id, {
+  getCat = (id: string): Promise<Cat> => {
+    return this.request<Cat>(`/` + id, {
       method: "GET"
     });
   }
 
 }
 
-const catAPI=new CatAPI(API_URL);
+const catAPI = new CatAPI(API_URL);
 export default catAPI;

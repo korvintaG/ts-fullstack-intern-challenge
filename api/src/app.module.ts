@@ -20,11 +20,11 @@ import { UsersModule } from './users/users.module';
     useFactory: (configService: ConfigService) => {
       return {
         type: 'postgres',
-        host: configService.get('DATABASE_HOST'),
-        port: configService.get('DATABASE_PORT'),
-        username: configService.get('DATABASE_USERNAME'),
-        password: configService.get('DATABASE_PASSWORD'),
-        database: configService.get('DATABASE_NAME'),
+        host: configService.get('DATABASE_HOST') || 'cat-pinterest-api-pg',
+        port: configService.get('DATABASE_PORT') || 5432,
+        username: configService.get('DATABASE_USERNAME') || 'postgres',
+        password: configService.get('DATABASE_PASSWORD') || '1',
+        database: configService.get('DATABASE_NAME') || 'support_lk_db',
         entities: [Like, User],
         synchronize: true,
       }
