@@ -1,0 +1,7 @@
+node_modules
+build
+.env
+.idea
+dist
+package-lock.json 
+arc.bat 

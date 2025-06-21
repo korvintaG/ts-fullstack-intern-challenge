@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    padding: 48px;
+}
+
+@media (max-width: 750px) {
+    .main {
+      gap: 24px;
+      padding: 24px;
+    }
+}
+  

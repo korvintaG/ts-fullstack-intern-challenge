@@ -1,0 +1,55 @@
+.container {
+    display: block;
+    position: relative;
+    width: 225px;
+    height: 225px;
+    background: #fff;   
+    z-index: 10;  
+}
+
+.container::before{
+    content: '';
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: 256px; /* Желаемый размер рамки */
+    height: 256px;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Опциональная граница рамки */
+    box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.18), /* Вертикальная тень */
+    4px 0 8px rgba(0, 0, 0, 0.24); /* Горизонтальная тень */    
+    opacity: 0;
+}
+
+.container:hover::before{
+    opacity: 1;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease; /* Плавное изменение */
+}
+
+.hidden {
+    opacity: 0; 
+}
+
+.always_show {
+    opacity: 1; 
+}
+
+.container:hover .icon {
+    opacity: 1; /* Показываем кнопку */
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+.hidden {
+    fill: transparent;
+}
+
+.visible {
+    fill: var(--icon-body);
+}
+
+
+.body:hover {
+    fill: var(--icon-body);
+}
+
+.body:active {
+    fill: var(--icon-body);
+}
+
+.contour {
+    fill: var(--icon-contour);
+}
